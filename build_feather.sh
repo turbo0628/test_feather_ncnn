@@ -1,8 +1,17 @@
 #!/bin/bash
 
+if [ "$1" == "MACOS" ]
+then
 BUILD_SCRIPT=build_macos_avx.sh
 BUILD_FOLDER=build-macos-avx
-
+elif [ "$1" == "ARMLINUX" ]
+then
+BUILD_SCRIPT=build_armlinux.sh
+BUILD_FOLDER=build-linux-aarch64
+else
+echo "Usage: ./build_feather.sh [ARMLINUX|MACOS]"
+exit 0
+fi
 pushd feather
 ./build_scripts/$BUILD_SCRIPT
 popd
