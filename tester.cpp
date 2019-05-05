@@ -18,7 +18,7 @@ int main(int argc, char*  argv[])
     float* input_data = (float*) malloc(sizeof(float) * w * h * c);
     
     FillRandInputData(input_data, w * h *c, 1182591); //Magic number for pseudo random seed.
-    onst char* input_name = "data";
+    const char* input_name = "data";
     const char* output_name = "prob";
     ncnn::Net net_ncnn;
     // Initialize
