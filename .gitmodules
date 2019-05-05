@@ -4,4 +4,3 @@
 [submodule "feather"]
 	path = feather
 	url = https://github.com/Tencent/FeatherCNN.git
-	shallow = true
