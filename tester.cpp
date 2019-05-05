@@ -11,24 +11,14 @@
 
 int main(int argc, char*  argv[])
 {
-    assert(argc == 4);
-    FILE* input_data_fp = fopen(argv[3], "r");
-    if (input_data_fp == NULL)
-    {
-        fprintf(stderr, "Cannot input data file %s", argv[3]);
-    }
+    assert(argc == 3);
     int w = 224;
     int h = 224;
     int c = 3;
     float* input_data = (float*) malloc(sizeof(float) * w * h * c);
-    int ld_ret = load_txt_floats(input_data, input_data_fp, w, h, c);
-    // Check ld return value.
-    if (ld_ret != 0)
-    {
-        printf("Load input data file failed.\n");
-        return -1;
-    }
-    const char* input_name = "data";
+    
+    FillRandInputData(input_data, w * h *c, 1182591); //Magic number for pseudo random seed.
+    onst char* input_name = "data";
     const char* output_name = "prob";
     ncnn::Net net_ncnn;
     // Initialize
@@ -66,6 +56,5 @@ int main(int argc, char*  argv[])
     }
     if (input_data)
         free(input_data);
-    fclose(input_data_fp);
     return 0;
 }
