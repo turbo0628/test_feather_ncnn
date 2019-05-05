@@ -7,7 +7,7 @@
 
 #include "test_utils.h"
 
-#include "net.h"
+#include <feather/net.h>
 
 int main(int argc, char*  argv[])
 {
