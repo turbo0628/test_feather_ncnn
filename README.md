@@ -1,7 +1,7 @@
 # The utility project to test computing results for FeatherCNN and ncnn
 
 This branch is for MacOS system.
-## Usgae
+## Usage
 First, clone this project and enter the root directory.
 ```
 git clone https://github.com/turbo0628/test_feather_ncnn
